@@ -1,0 +1,40 @@
+.chat-conatiner { 
+    display: flex;
+    padding: 25px;
+    cursor: pointer;
+    border-bottom: 1px solid #f6f6f6;
+    height: 45px;
+
+}
+
+.chat-conatiner:hover { 
+    background: rgb(235, 235, 235);
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+    background: rgb(170, 170, 170);
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+}
+
+.person-icon {
+    margin: auto;
+}
+
+.chat-conatiner, .text-name {
+    margin-top:-15px
+}
+
+.text-name {
+    margin-left: 1rem;   
+}
+
+.text-name p{
+    margin-top: -15px;
+
+}

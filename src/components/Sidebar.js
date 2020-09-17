@@ -1,5 +1,6 @@
 import React from 'react'
-import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import Hisotry from './chats/History'
+
 import PersonIcon from '@material-ui/icons/Person';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -51,7 +52,11 @@ const Sidebar = () => {
                 </div>
 
             <div className="sidebar-body">
-            CHATS
+                <Hisotry />
+                <Hisotry />
+                <Hisotry />
+                <Hisotry />
+                
             </div>
             
         </div>

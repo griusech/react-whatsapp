@@ -1,8 +1,8 @@
 .sidebar-chats {
     display: flex;
     flex-direction: column;
-    width: 40%;
-    min-width: 120px;
+    width: 30%;
+    min-width: 250px;
 }
 
 
