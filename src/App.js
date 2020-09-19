@@ -1,6 +1,8 @@
 import React from 'react';
 import Sidebar from './components/Sidebar'
 import Body from './components/Body'
+import Mensajes from './components/cuerpo/Mensajes'
+
 import './Style-app.css';
 
 function App() {
@@ -9,7 +11,7 @@ function App() {
     
     <Sidebar />
   
-    <Body />
+    <Mensajes />
     </div>
   );
 }
