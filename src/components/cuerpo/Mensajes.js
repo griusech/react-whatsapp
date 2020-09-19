@@ -1,17 +1,43 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+
+import CuerpoChats from '../textos/CuerpoChats'
 import '../cuerpo/mensajes.css'
 
+//FIREBASE
+import {db} from '../../firebase'
+
+// ICONOS MATERIAL UI
 import PersonIcon from '@material-ui/icons/Person';
 import SearchIcon from '@material-ui/icons/Search';
-import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
-import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-import SendIcon from '@material-ui/icons/Send';
-import MicIcon from '@material-ui/icons/Mic';
-import {Button, IconButton} from '@material-ui/core'
+import {IconButton} from '@material-ui/core'
 
-const mensajes = () => {
+const Mensajes = () => {
+
+    const [values, setValues] = useState([])
+    
+    const addChat = async (linkObject) => {
+        await db.collection('chats').doc().set(linkObject)
+        console.log("Nuevo Chat Agregado")
+    }
+    
+    const getChat = () => {
+        const docs = [];
+        db.collection('chats').onSnapshot((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                docs.push({...doc.data(), id: doc.id})
+            })
+            console.log(docs)
+            setValues(docs)
+        })
+    }
+    
+    useEffect(() => {
+        getChat()        
+    }, [])
+
+
     return (
     <div className="chats">
         
@@ -46,37 +72,24 @@ const mensajes = () => {
         </div>
 
         <div className="mensaje-body">
-            <div className="mensaje-container">
-                
-
-            </div>
+            {values.map(item => (
+                <h5>{item.msg}</h5>
+            )
+            )}
         </div>
 
-        <div className="chat-footer">
-            <InsertEmoticonIcon 
-                className="smile"
-            />
-        
-            <form>
-                <input 
-                    type="text"
-                    placeholder="Escribe un mensaje aquí"
-                />
-
-                <IconButton>
-                    <SendIcon />
-                </IconButton>
-
-                <IconButton>
-                    <MicIcon />
-                </IconButton>
-            </form>
-
-        </div>
-
+        <CuerpoChats 
+       
+            addChat={addChat}
+        />
 
     </div>
     )
 }
 
-export default mensajes
+export default Mensajes
+
+
+
+
+

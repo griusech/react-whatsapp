@@ -1,6 +1,6 @@
 import React from 'react'
 import PersonIcon from '@material-ui/icons/Person';
-import '../chats/history.css'
+import './history.css'
 
 const History = () => {
     return (    

@@ -1,12 +1,12 @@
 import React from 'react'
-import Hisotry from './chats/History'
+import Hisotry from './history/History'
 
 import PersonIcon from '@material-ui/icons/Person';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import DataUsageIcon from '@material-ui/icons/DataUsage';
 import SearchIcon from '@material-ui/icons/Search';
-import {Icon, Button, IconButton} from '@material-ui/core'
+import {IconButton} from '@material-ui/core'
 import '../components/sidebar.css';
 
 const Sidebar = () => {
@@ -64,3 +64,7 @@ const Sidebar = () => {
 }
 
 export default Sidebar
+
+
+
+
